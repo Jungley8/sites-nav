@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "阿派欧导航",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "阿派欧导航 Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
