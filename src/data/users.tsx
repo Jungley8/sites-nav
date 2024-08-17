@@ -46,6 +46,10 @@ export type TagType =
   | 'crossplatform'
   | 'cloud'
   | 'saas'
+  | 'app'
+  | 'linux'
+  | 'macos'
+  | 'windows'
   | 'android'
   | 'web'
   | 'ios';
@@ -54,20 +58,97 @@ export type TagType =
 // prettier-ignore
 const Users: User[] = [
   {
-    title: 'AgileTs',
-    description: 'Global State and Logic Framework for reactive Applications',
+    title: translate({message: 'IT Tools', id: 'showcase.sites.it-tools.title'}),
+    description: translate({message: 'Handy tools for developers', id: 'showcase.sites.it-tools.description'}),
     // preview: require('./showcase/agilets.png'),
-    website: 'https://agile-ts.org/',
-    source: 'https://github.com/agile-ts/documentation',
-    tags: ['opensource', 'design'],
+    website: 'https://it-tools.appio.fun',
+    source: 'https://github.com/jungley8/it-tools',
+    tags: ['opensource', 'free', 'web'],
   },
   {
-    title: 'AI-Speaker',
-    description: 'Local, reliable, fast and private Audio and IoT gate.',
+    title: translate({message: 'n8n', id: 'showcase.sites.n8n.title'}),
+    description: translate({message: " Workflow automation tool, Easily automate tasks across different services.", id: 'showcase.sites.n8n.description'}),
     // preview: require('./showcase/aispeaker.png'),
-    website: 'https://ai-speaker.com/',
-    source: 'https://github.com/sviete/AIS-WWW',
-    tags: ['opensource'],
+    website: 'https://n8n.io',
+    source: 'https://github.com/n8n-io/n8n',
+    tags: ['opensource', 'web'],
+  },
+
+  {
+    title: translate({message: 'Code Server', id: 'showcase.sites.code-server.title'}),
+    description: translate({message: "Run VS Code on any machine anywhere and access it in the browser.", id: 'showcase.sites.code-server.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://coder.com/',
+    source: 'https://github.com/coder/code-server',
+    tags: ['opensource', 'free', 'web'],
+  },
+
+  {
+    title: translate({message: 'Upscayl', id: 'showcase.sites.upscayl.title'}),
+    description: translate({message: "Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality.", id: 'showcase.sites.upscayl.description'}),
+    preview: require('./showcase/upscayl.png'),
+    website: 'https://upscayl.org',
+    source: 'https://github.com/upscayl/upscayl',
+    tags: ['free', 'linux', 'macos', 'windows'],
+  },
+
+  {
+    title: translate({message: 'Clarity', id: 'showcase.sites.clarity.title'}),
+    description: translate({message: "A behavioral analytics library that uses dom mutations and user interactions to generate aggregated insights.", id: 'showcase.sites.clarity.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://clarity.microsoft.com',
+    source: 'https://github.com/microsoft/clarity',
+    tags: ['free', 'web'],
+  },
+
+  {
+    title: translate({message: 'Dify', id: 'showcase.sites.dify.title'}),
+    description: translate({message: "An LLM app development platform that combines AI workflows, RAG pipelines, agent capabilities, model management, observability features, and more, enabling you to quickly move from prototype to production.", id: 'showcase.sites.dify.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://dify.ai',
+    source: 'https://github.com/langgenius/dify',
+    tags: ['opensource', 'web'],
+  },
+  {
+    title: translate({message: 'Lobe Chat', id: 'showcase.sites.lobe-chat.title'}),
+    description: translate({message: "An modern-design LLMs/AI chat framework. Supports Multi AI Providers, Multi-Modals (Vision/TTS) and plugin system.", id: 'showcase.sites.lobe-chat.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://lobehub.com',
+    source: 'https://github.com/lobehub/lobe-chat',
+    tags: ['opensource', 'web'],
+  },
+  {
+    title: translate({message: 'Tldraw', id: 'showcase.sites.tldraw.title'}),
+    description: translate({message: "SDK for creating whiteboards and canvas experiences on the web.", id: 'showcase.sites.tldraw.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://tldraw.dev',
+    source: 'https://github.com/tldraw/tldraw',
+    tags: ['opensource', 'web'],
+  },
+  {
+    title: translate({message: 'Web-Check', id: 'showcase.sites.web-check.title'}),
+    description: translate({message: "Comprehensive, on-demand open source intelligence for any website, All-in-one OSINT tool for analysing any website", id: 'showcase.sites.web-check.description'}),
+    preview: require('./showcase/web-check.png'),
+    website: 'https://web-check.xyz',
+    source: 'https://github.com/Lissy93/web-check',
+    tags: ['opensource', 'web'],
+  },
+  {
+    title: translate({message: 'Syncthing', id: 'showcase.sites.syncthing.title'}),
+    description: translate({message: "A continuous file synchronization program", id: 'showcase.sites.syncthing.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://syncthing.net',
+    source: 'https://github.com/syncthing/syncthing',
+    tags: ['opensource', 'app'],
+  },
+
+  {
+    title: translate({message: 'Awesome-Selfhosted', id: 'showcase.sites.awesome-selfhosted.title'}),
+    description: translate({message: "A list of Free Software network services and web applications which can be hosted on your own servers", id: 'showcase.sites.awesome-selfhosted.description'}),
+    // preview: require('./showcase/aispeaker.png'),
+    website: 'https://awesome-selfhosted.net',
+    source: 'https://github.com/awesome-selfhosted/awesome-selfhosted',
+    tags: ['opensource', 'web'],
   },
 
   /*
@@ -188,6 +269,42 @@ export const Tags: { [type in TagType]: Tag } = {
       id: 'showcase.tag.ios.description',
     }),
     color: '#000000',
+  },
+  app: {
+    label: translate({ message: 'App', id: 'showcase.tag.app.label' }),
+    description: translate({
+      message:
+        'Applications and services that run on a device and provide a user interface.',
+      id: 'showcase.tag.app.description',
+    }),
+    color: '#fcc02b',
+  },
+  linux: {
+    label: translate({ message: 'Linux', id: 'showcase.tag.linux.label' }),
+    description: translate({
+      message:
+        'Applications and services that run on the Linux operating system.',
+      id: 'showcase.tag.linux.description',
+    }),
+    color: '#fcc02b',
+  },
+  macos: {
+    label: translate({ message: 'macOS', id: 'showcase.tag.macos.label' }),
+    description: translate({
+      message:
+        'Applications and services that run on the macOS operating system.',
+      id: 'showcase.tag.macos.description',
+    }),
+    color: '#000000',
+  },
+  windows: {
+    label: translate({ message: 'Windows', id: 'showcase.tag.windows.label' }),
+    description: translate({
+      message:
+        'Applications and services that run on the Windows operating system.',
+      id: 'showcase.tag.windows.description',
+    }),
+    color: '#00aaff',
   },
 };
 
